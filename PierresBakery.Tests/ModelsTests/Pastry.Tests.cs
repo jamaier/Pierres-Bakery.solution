@@ -1,8 +1,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Pastry.Models;
+using PierresBakery.Models;
 
 
-namespace Pastry.ModelsTests
+namespace PierresBakery.ModelsTests
 {
   [TestClass]
   public class PastryTests
@@ -10,8 +10,8 @@ namespace Pastry.ModelsTests
         [TestMethod]
     public void Bread_CreateInstanceOfBread_Bread()
     {
-      PastryTypes newPastry = new PastryTypes();
-      Assert.AreEqual(typeof(PastryTypes), newPastry.GetType());
+      Pastry newPastry = new Pastry();
+      Assert.AreEqual(typeof(Pastry), newPastry.GetType());
     }
   }
 }

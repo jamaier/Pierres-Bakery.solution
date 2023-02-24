@@ -33,5 +33,18 @@ namespace PierresBakery.ModelsTests
       Assert.AreEqual(breadQuantity, newOrder.BreadOrder.Quantity);
       Assert.AreEqual(pastryQuantity, newOrder.PastryOrder.Quantity);
     }
+
+    [TestMethod]
+    public void OrderForm_GetTotalCostOfOrder_OrderFormTotals()
+    {
+      int breadQuantity = 5;
+      int pastryQuantity = 10;
+      Bread newBread = new Bread(breadQuantity);
+      Pastry newPastry = new Pastry(pastryQuantity);
+      OrderForm newOrder = new OrderForm(breadQuantity, pastryQuantity);
+      int totalCost = newOrder.TotalCost();
+      int expectedCost = (newBread.BreadTotal() + newPastry.PastryTotal());
+      Assert.AreEqual(totalCost, expectedCost);
+    }
   }
 }

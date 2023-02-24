@@ -12,9 +12,8 @@ public class OrderForm
       BreadOrder = new Bread(breadQuantity);
       PastryOrder = new Pastry(pastryQuantity);
     }
-    //Realizing this doesn't need to be in the test yet
-    //     public int TotalCost()
-    // {
-    //   return BreadOrder.BreadTotal() + PastryOrder.PastryTotal();
-    // }
+    public int TotalCost()
+    {
+      return BreadOrder.BreadTotal() + PastryOrder.PastryTotal();
+    }
 }

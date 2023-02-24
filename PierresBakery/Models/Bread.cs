@@ -1,8 +1,8 @@
 
 namespace Bread.Models
 {
-  public class Bread
+  public class BreadTypes
   {
-
+    
   }
 }

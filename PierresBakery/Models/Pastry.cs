@@ -1,7 +1,7 @@
 
 namespace Pastry.Models
 {
-  public class Pastry
+  public class PastryTypes
   {
 
   }

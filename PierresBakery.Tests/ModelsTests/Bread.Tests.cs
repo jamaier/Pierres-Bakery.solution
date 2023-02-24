@@ -29,7 +29,26 @@ namespace PierresBakery.ModelsTests
     {
       int quantity = 2;
       Bread newBread = new Bread(quantity);
-      Assert.AreEqual(10, newBread.BreadTotal());
+      int result = newBread.BreadTotal();
+      Assert.AreEqual(10, result);
+    }
+
+    [TestMethod]
+    public void Bread_GetBreadDiscount_Bread()
+    {
+      int quantity = 9;
+      Bread newBread = new Bread(quantity);
+      int result = newBread.BreadTotal();
+      Assert.AreEqual(30, result);
+    }
+
+    [TestMethod]
+    public void Bread_GetBreadDiscount_BreadTest2()
+    {
+      int quantity = 10;
+      Bread newBread = new Bread(quantity);
+      int result = newBread.BreadTotal();
+      Assert.AreEqual(35, result);
     }
   }
 }

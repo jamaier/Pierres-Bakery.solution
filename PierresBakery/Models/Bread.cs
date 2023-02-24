@@ -13,7 +13,13 @@ namespace PierresBakery.Models
     }
     public int BreadTotal()
     {
-      return Price * Quantity;
+      int totalCost = Price * Quantity;
+      if (Quantity >= 3)
+      {
+        int discount = (Quantity / 3) * Price;
+        totalCost -= discount;
+      }
+      return totalCost;
     }
   }
 }

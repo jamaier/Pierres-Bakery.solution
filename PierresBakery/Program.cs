@@ -8,7 +8,8 @@ namespace Pierres_Bakery
   {
     static void Main()
     {
-
+      Console.WriteLine("Welcome to Pierre's");
+      Console.WriteLine("Our Menu:");
     }
   }
 }

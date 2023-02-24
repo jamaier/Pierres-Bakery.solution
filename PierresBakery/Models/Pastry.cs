@@ -10,5 +10,15 @@ namespace PierresBakery.Models
       Price = 2;
       Quantity = quantity;
     }
+        public int PastryTotal()
+    {
+      int totalCost = Price * Quantity;
+      if (Quantity >= 4)
+      {
+        int discount = (Quantity / 4) * Price;
+        totalCost -= discount;
+      }
+      return totalCost;
+    }
   }
 }

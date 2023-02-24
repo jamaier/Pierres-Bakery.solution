@@ -7,7 +7,7 @@ namespace PierresBakery.ModelsTests
   [TestClass]
   public class PastryTests
   {
-        [TestMethod]
+    [TestMethod]
     public void Pastry_CreateInstanceOfPastry_Pastry()
     {
       Pastry newPastry = new Pastry(0);
@@ -24,5 +24,13 @@ namespace PierresBakery.ModelsTests
       Assert.AreEqual(quantity, newPastry.Quantity);
     }
 
+    [TestMethod]
+    public void Pastry_GetPastryDiscount_PastryTest2()
+    {
+      int quantity = 10;
+      Pastry newPastry = new Pastry(quantity);
+      int result = newPastry.PastryTotal();
+      Assert.AreEqual(16, result);
+    }
   }
 }

@@ -7,16 +7,20 @@ namespace Pierres_Bakery
   {
     static void Main()
     {
-      Console.WriteLine("~~~~~~~~~~~~~~~~~Welcome to Pierre's~~~~~~~~~~~~~~~");
-      OrderForm currentOrder = new OrderForm(0, 0);
-
+      Console.WriteLine("~~~~~~~~Welcome to Pierre's~~~~~~~");
+      Console.WriteLine("");
       Console.WriteLine("- - - - - - - - - - Our Menu: - - - - - - - - - - -");
       Console.WriteLine("Loaf of Bread - $5ea.");
       Console.WriteLine("Pastry    -     $2ea.");
       Console.WriteLine("- - - - - - - - - - - - - - - - - - - - - - - - - - ");
-      Console.WriteLine("T");
-      Console.WriteLine("Pastry    -     $2ea.");
-      // Console.WriteLine("How many loaves of bread would you like?");
+      Console.WriteLine("");
+      Console.WriteLine("****************Todays Deals************************");
+      Console.WriteLine("Bread -- Buy TWO get ONE FREE!");
+      Console.WriteLine("Pastry - Buy THREE get ONE FREE!");
+      Console.WriteLine("****************************************************");
+      Console.WriteLine("");
+
+      OrderForm currentOrder = new OrderForm(0, 0);
       int breadInput = 0;
       int pastryInput = 0;
 
@@ -48,14 +52,18 @@ namespace Pierres_Bakery
       Console.WriteLine($"Order Summary:");
       Console.WriteLine($"Bread x {breadInput} @ ${breadPrice}    = ${breadTotal}");
       Console.WriteLine($"Pastry x {pastryInput} @ ${pastryPrice} = ${pastryTotal}");
-      Console.WriteLine($"Total cost                              = ${totalCost}");
+      Console.WriteLine($"Total cost          = ${totalCost}");
 
-      Console.WriteLine("Would you like to Place your Order now? (Yes/No)");
+      Console.WriteLine("Would you like to place your order now? (YES/NO)");
+      ConfirmOrder();
+    }
+    static void ConfirmOrder()
+    {
       string placeOrder = Console.ReadLine().ToLower();
-      if (placeOrder == "Yes")
+      if (placeOrder == "yes")
       {
         Console.WriteLine("Thank you for your order! Press any key to exit.");
-        Console.ReadKey();
+        return;
       }
       else
       {
@@ -63,7 +71,8 @@ namespace Pierres_Bakery
         Console.Write("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         Main();
       }
-
+      Console.ReadKey();
     }
   }
 }
+

@@ -7,17 +7,18 @@ namespace Pierres_Bakery
   {
     static void Main()
     {
-      Console.WriteLine("~~~~~~~~Welcome to Pierre's~~~~~~~");
+      Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+      Console.WriteLine("~~~~~~~~~~~~~~Welcome to Pierre's~~~~~~~~~~~~~~~~~~");
       Console.WriteLine("");
       Console.WriteLine("- - - - - - - - - - Our Menu: - - - - - - - - - - -");
       Console.WriteLine("Loaf of Bread - $5ea.");
       Console.WriteLine("Pastry    -     $2ea.");
       Console.WriteLine("- - - - - - - - - - - - - - - - - - - - - - - - - - ");
       Console.WriteLine("");
-      Console.WriteLine("****************Todays Deals************************");
+      Console.WriteLine("****************Todays Deals***********************");
       Console.WriteLine("Bread -- Buy TWO get ONE FREE!");
       Console.WriteLine("Pastry - Buy THREE get ONE FREE!");
-      Console.WriteLine("****************************************************");
+      Console.WriteLine("***************************************************");
       Console.WriteLine("");
 
       OrderForm currentOrder = new OrderForm(0, 0);
@@ -33,7 +34,11 @@ namespace Pierres_Bakery
       }
       catch (Exception)
       {
-        Console.WriteLine("Error: Invalid input. Please enter a valid Number value. Please start again.");
+        Console.WriteLine("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        Console.WriteLine("Error: Invalid input. Please enter a valid Number value.");
+        Console.WriteLine("Please start again.");
+        Console.WriteLine("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        // timer = new System.Timers.Timer(4000); want to figure out a delay in restart.
         Main();
       }
 
@@ -48,29 +53,34 @@ namespace Pierres_Bakery
 
       int totalCost = breadTotal + pastryTotal;
 
-      Console.WriteLine("=========================================================");
-      Console.WriteLine($"Order Summary:");
-      Console.WriteLine($"Bread x {breadInput} @ ${breadPrice}    = ${breadTotal}");
+      Console.WriteLine("====================================================");
+      Console.WriteLine("Order Summary:");
+      Console.WriteLine($"Bread x {breadInput} @ ${breadPrice}  = ${breadTotal}");
       Console.WriteLine($"Pastry x {pastryInput} @ ${pastryPrice} = ${pastryTotal}");
-      Console.WriteLine($"Total cost          = ${totalCost}");
+      Console.WriteLine($"Total cost      = ${totalCost}");
+      Console.WriteLine("====================================================");
 
       Console.WriteLine("Would you like to place your order now? (YES/NO)");
-      ConfirmOrder();
-    }
-    static void ConfirmOrder()
-    {
       string placeOrder = Console.ReadLine().ToLower();
+
+      while (placeOrder != "yes" && placeOrder != "no")
+      {
+        Console.WriteLine("Invalid input. Please enter YES or NO.");
+        placeOrder = Console.ReadLine().ToLower();
+      }
+
       if (placeOrder == "yes")
       {
-        Console.WriteLine("Thank you for your order! Press any key to exit.");
-        return;
+        Console.WriteLine("Thank you for your order!");
       }
       else
       {
-        Console.Write("Okay, let's start again!");
-        Console.Write("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        Console.WriteLine("___________________________________________________");
+        Console.WriteLine("Okay, let's start again!");
         Main();
       }
+
+      Console.WriteLine("Press any key to exit.");
       Console.ReadKey();
     }
   }

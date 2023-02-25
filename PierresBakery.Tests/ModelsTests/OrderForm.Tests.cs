@@ -9,7 +9,7 @@ namespace PierresBakery.ModelsTests
     [TestMethod]
     public void OrderForm_CreateInstanceOfOrderForm_OrderForm()
     {
-      OrderForm newOrder = new OrderForm(0,0);
+      OrderForm newOrder = new OrderForm(0, 0);
       Assert.AreEqual(typeof(OrderForm), newOrder.GetType());
     }
 
@@ -18,7 +18,7 @@ namespace PierresBakery.ModelsTests
     {
       int breadQuantity = 2;
       Bread newBread = new Bread(breadQuantity);
-      OrderForm newOrder = new OrderForm(breadQuantity,0);
+      OrderForm newOrder = new OrderForm(breadQuantity, 0);
       Assert.AreEqual(newBread.Quantity, newOrder.BreadOrder.Quantity);
     }
 

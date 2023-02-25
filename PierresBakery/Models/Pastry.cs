@@ -10,7 +10,7 @@ namespace PierresBakery.Models
       Price = 2;
       Quantity = quantity;
     }
-      public int PastryTotal()
+    public int PastryTotal()
     {
       int totalCost = Price * Quantity;
       if (Quantity >= 4)

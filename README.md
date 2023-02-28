@@ -23,9 +23,15 @@ _This console application takes user input and returns a total price based on th
   - _Optionally, you can run `dotnet build` to compile this console app without running it._
 
 
+## For Testing
+
+* _Clone the repo and/or navigate to the PierresBakery.Tests directory in yur command line_
+* _Enter `dotnet restore` to restore dependencies._
+* _Then enter `dotnet test` to test existing or new tests._
+
 ## Known Bugs
 
-* _Invalid input currently restarts application instead of a specific return point._
+* _Invalid input value currently restarts application instead of a specific return point._
 
 ## License
 
